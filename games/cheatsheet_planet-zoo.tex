@@ -1,0 +1,106 @@
+\documentclass[12pt,twoside]{article}
+\usepackage{geometry}
+\geometry{a4paper,landscape,margin=1.5cm}
+
+% fancy keys
+\usepackage[os=win]{menukeys}
+\renewmenumacro{\keys}[+]{roundedkeys}
+\newcommand{\oder}{\thickspace / \thickspace}
+
+% font stuff
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont{Noto Sans}
+
+\usepackage{multicol}
+% lengths
+\setlength{\unitlength}{1mm} % Set the length that numerical units are measured in
+\setlength{\parindent}{0pt} % Stop paragraph indentation
+% distance between lines
+\setlength{\baselineskip}{12pt}
+\setlength{\lineskip}{3.5pt}
+\setlength{\lineskiplimit}{2pt}
+
+% dot filling
+\renewcommand{\dots}{\ \dotfill{}\ } % Fills in the right amount of dots
+\newcommand{\command}[2]{#1~\dotfill{}~#2\\} % Custom command for adding a shorcut
+
+% section title and maketitle
+\newcommand{\sectiontitle}[1]{\textbf{#1} \ \\} % Custom command for subsection titles
+
+\makeatletter
+\renewcommand{\maketitle}{{\centering{\Large\bfseries\@title}}\\}
+\makeatother
+
+\title{Planet Zoo Keyboard Shortcuts}
+
+\begin{document}
+
+\begin{multicols*}{3}
+\maketitle
+\emph{for German keyboard}\\ % subtitle
+
+\sectiontitle{User Interface} % new section
+\command{\keys{\esc}}{close stuff}
+\command{\keys{\del}}{delete stuff}
+\command{\keys{G}}{toggle show user interface}
+\command{\keys{1}}{open Zoo Management}
+\command{\keys{2}}{open Animal Trading}
+\command{\keys{F2}}{open Exhibit Trading}
+\command{\keys{3}}{open Barriers}
+\command{\keys{4}}{open Habitat}
+\command{\keys{5}}{open Nature}
+\command{\keys{6}}{open Facilities}
+\command{\keys{7}}{open Construction}
+\command{\keys{8}}{open Blueprints}
+\command{\keys{9}}{open Paths}
+\command{\keys{0}}{open Terrain}
+\command{\keys{H}}{open Heat Maps}
+\command{\keys{I}}{open Multi-Select}
+
+\sectiontitle{General Placement \& Editing}
+\command{\keys{Ctrl+LMB}}{select multiple pieces}
+\command{\keys{M}}{move selection}
+\command{\keys{X}}{toggle advanced move/rotate}
+\command{\keys{Ctrl+D}}{duplicate object}
+\command{\keys{Ctrl+X}}{duplicate object and avanced move}
+\command{\keys{R}}{enter group edit mode}
+\command{\keys{Y+\arrowkeyleft/\arrowkeyright}}{rotate}
+\command{\keys{\shift+\arrowkeyup/\arrowkeydown}}{adjust vertical placement}
+\command{\keys{\shift}}{reset vertical placement}
+\command{\keys{Ctrl} + move mouse}{lock to surface axes}
+\command{\keys{\SPACE}}{toggle Angle Snap}
+\command{\keys{V}}{toggle Align to Surface}
+\command{\keys{K}}{toggle Flatten Terrain}
+\command{\keys{F}}{toggle Snap Stuff to Wall Piece Center}
+
+\sectiontitle{Paths}
+\command{\keys{RMB}}{delete path}
+\command{\keys{LMB} on preview, then \keys{\arrowkeyup/\arrowkeydown}}{raise/lower path}
+\command{\keys{U} \oder\keys{J}}{raise/lower path without placing}
+\command{\keys{Y} + move mouse}{rotate junction angle}
+\command{hold \keys{Y}}{make right angle join}
+\command{hold \keys{Ctrl}}{prevent paths from joining}
+\command{\keys{ß} \oder \keys{´}}{decrease/increase path length}
+\command{\keys{Ü} \oder \keys{{+}}}{decrease/increase path width}
+\command{hold \keys{Y}}{create Y junction from existing path}
+\command{\keys{X}}{toggle T Junction}
+\command{\keys{Z}}{toggle Curved Slopes}
+\command{\keys{B}}{toggle Align to Placement Suggestions}
+\command{\keys{N}}{enter/exit Align to Grid}
+\emph{as well as most general editing shortcuts and toggles}\\
+
+\sectiontitle{Barriers}
+\command{\keys{Y}}{hold to change curve radius}
+\emph{as well as most general editing shortcuts and toggles}\\
+
+\sectiontitle{Terrain Editing}
+\command{\keys{ß} \oder \keys{´}}{decrease/increase brush intensity}
+\command{\keys{Ü} \oder \keys{{+}}}{decrease/increase brush size}
+\command{hold \keys{Ctrl}}{apply inverse brush (pull/push)}
+
+\sectiontitle{Multiselect Tool}
+\command{\keys{\Alt+LMB}}{select objects in group with same color}
+\end{multicols*}
+
+\end{document}

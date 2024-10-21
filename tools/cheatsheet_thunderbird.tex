@@ -1,0 +1,103 @@
+\documentclass[12pt,twoside]{article}
+\usepackage{geometry}
+\geometry{a4paper,landscape,margin=1.5cm}
+
+\usepackage[svgnames]{xcolor}
+
+% fancy keys
+\usepackage[os=win]{menukeys}
+\renewmenumacro{\keys}[+]{roundedkeys}
+\newcommand{\oder}{\thickspace / \thickspace}
+
+% font stuff
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+\setmainfont{Noto Sans}
+
+% columns
+\usepackage{multicol}
+% lengths
+\setlength{\unitlength}{1mm} % Set the length that numerical units are measured in
+\setlength{\parindent}{0pt} % Stop paragraph indentation
+% distance between lines
+\setlength{\baselineskip}{12pt}
+\setlength{\lineskip}{3.5pt}
+\setlength{\lineskiplimit}{2pt}
+
+% dot filling
+\renewcommand{\dots}{\ \dotfill{}\ } % Fills in the right amount of dots
+%\def\uscorefill#1{\cleaders\hbox to #1{\_}\hfill}
+
+% custom commands for adding a keyboard shortcut
+\newcommand{\command}[2]{#1~\dotfill{}~#2\\} % Custom command for adding a shorcut
+\newcommand{\commandk}[2]{\command{\keys{#1}}{#2}} % lazy: first argument gets wrapped in keys{}
+
+% section title and maketitle
+\newcommand{\sectiontitle}[1]{\textsc{\textbf{#1}} \ \textcolor{DarkGray}{\hrulefill}\\} % Custom command for subsection titles
+%\newcommand{\subsectiontitle}[1]{\textbf{#1} \ \\} % Custom command for subsection titles
+\newcommand{\subsectiontitle}[1]{\textcolor{DimGray}{\textbf{#1}} \ \\} % Custom command for subsection titles
+
+\makeatletter
+\renewcommand{\maketitle}{{\centering{\Large\bfseries\@title}}\\}
+\makeatother
+
+\title{Thunderbird Cheat Sheet}
+
+\begin{document}
+\begin{multicols*}{3}
+
+\maketitle
+%\emph{Subtitle here}\\
+
+\sectiontitle{Tabs \& Sections}
+\commandk{\Alt + 1}{mail home tab}
+\commandk{\Alt + 2}{address book tab}
+\commandk{\Alt + 3}{calendar tab}
+\commandk{\Alt + 4}{tasks tab}
+\commandk{\Alt + 5}{chat tab}
+\commandk{F6}{move to next main UI area}
+\commandk{\shift + F6}{move to previous main UI area}
+\commandk{F8}{toggle message pane}
+
+\sectiontitle{Message Functions}
+\subsectiontitle{General}
+\commandk{Ctrl + N}{new message}
+\commandk{Ctrl + \enter}{send message}
+\commandk{Ctrl + R}{reply to sender}
+\commandk{Ctrl + \shift + R}{reply all}
+\command{\keys{Ctrl + O} / \keys{\enter}}{open message in new tab/window}
+
+\subsectiontitle{Marking and Tagging}
+\commandk{M}{toggle mark read}
+\commandk{\shift + C}{mark all read}
+\commandk{J}{mark as junk}
+\commandk{\shift + J}{mark as not junk}
+\command{\keys{1} to \keys{9}}{add/remove tag}
+\commandk{0}{remove all tags}
+
+\subsectiontitle{Moving around}
+\commandk{F}{go to next message}
+\commandk{B}{go to previous message}
+\commandk{N}{go to next unread message}
+\commandk{P}{go to previous unread message}
+
+\subsectiontitle{Threads}
+\commandk{\arrowkeyright}{expand thread}
+\commandk{\arrowkeyleft}{collapse thread}
+\commandk{*}{expand all threads}
+\commandk{\textbackslash}{collapse all thread}
+
+\sectiontitle{Address Book}
+\commandk{Ctrl + N}{new contact}
+\commandk{Ctrl + M}{write new message to selected contact(s)}
+
+\sectiontitle{Calendar}
+\commandk{F11}{show/hide today pane}
+\commandk{Ctrl + I}{new event}
+\commandk{Ctrl + D}{new task}
+\commandk{\Alt + End}{go to today}
+\commandk{]}{go to next day/week/month}
+\commandk{[}{go to previous day/week/month}
+
+\end{multicols*}
+\end{document}
