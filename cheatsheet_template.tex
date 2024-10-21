@@ -2,6 +2,7 @@
 \usepackage{geometry}
 \geometry{a4paper,landscape,margin=1.5cm}
 
+% svgnames for DimGray color
 \usepackage[svgnames]{xcolor}
 
 % fancy keys
@@ -12,6 +13,7 @@
 % font stuff
 \usepackage{fontspec}
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+% use whatever font you want, I just like Noto Sans
 \setmainfont{Noto Sans}
 
 % columns
@@ -26,7 +28,6 @@
 
 % dot filling
 \renewcommand{\dots}{\ \dotfill{}\ } % Fills in the right amount of dots
-%\def\uscorefill#1{\cleaders\hbox to #1{\_}\hfill}
 
 % custom commands for adding a keyboard shortcut
 \newcommand{\command}[2]{#1~\dotfill{}~#2\\} % Custom command for adding a shorcut
@@ -34,7 +35,6 @@
 
 % section title and maketitle
 \newcommand{\sectiontitle}[1]{\textsc{\textbf{#1}} \ \textcolor{DarkGray}{\hrulefill}\\} % Custom command for subsection titles
-%\newcommand{\subsectiontitle}[1]{\textbf{#1} \ \\} % Custom command for subsection titles
 \newcommand{\subsectiontitle}[1]{\textcolor{DimGray}{\textbf{#1}} \ \\} % Custom command for subsection titles
 
 \makeatletter
@@ -59,13 +59,13 @@
 \command{\keys{\del}}{delete stuff}
 \command{\keys{\shift}}{reset vertical placement}
 \command{\keys{\SPACE}}{toggle Angle Snap}
-\command{\keys{\Alt+LMB}}{select objects in group with same color}
+\command{\keys{\arrowkeyleft/\arrowkeyright}}{rotate}
 
 \sectiontitle{You can combine Keys...}
+\command{\keys{\Alt+LMB}}{select objects in group with same color}
 \command{\keys{Ctrl+LMB}}{select multiple pieces}
 
-\sectiontitle{... or use Arrow Keys}
-\command{\keys{Y+\arrowkeyleft/\arrowkeyright}}{rotate}
+\sectiontitle{... or add whatever text}
 \command{\keys{LMB} on preview, then \keys{\arrowkeyup/\arrowkeydown}}{raise/lower path}
 
 \end{multicols*}
